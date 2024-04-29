@@ -1,13 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from functions import Function
+from utils import EXACT_INT, RECT_METHOD, TRAP_METHOD
 
 DOMAIN_OFFSET = 5
 
 class Chart:
 
-    def _renderLine(self, f: Function, x):
-        plt.title(f'Definite integral of {f.name}')
+    def _renderLine(self, f: Function, x, methodName: str):
+        plt.title(f'Definite integral of {f.name} - {methodName}')
         plt.plot(x, f.function(x))
         plt.legend('f(x)')
 
@@ -17,7 +18,7 @@ class Chart:
 
     def render(self, f: Function, a, b, resolution):
         x = np.linspace(a-2, b+2, 1000)
-        self._renderLine(f,x)
+        self._renderLine(f,x, EXACT_INT)
         self._exactIntegral(f, x, a, b, '#00ff0020')
         plt.show()
 
@@ -31,7 +32,7 @@ class RectangleChart(Chart):
 
     def render(self, f: Function, a, b, resolution):
         x = np.linspace(a - DOMAIN_OFFSET, b + DOMAIN_OFFSET, 1000)
-        super()._renderLine(f,x)
+        super()._renderLine(f,x, RECT_METHOD)
         super()._exactIntegral(f, x, a, b, '#00ff0020')
         self.__rectangleMethod(f, a, b, resolution)
         plt.show()
@@ -39,7 +40,6 @@ class RectangleChart(Chart):
 class TrapezoidChart(Chart):
 
     def __trapezoidMethod(self, f: Function, a, b, resolution):
-        delta_x = (b - a) / resolution
         x = np.linspace(a, b, resolution + 1)
         y = [f.function(x_temp) for x_temp in x]
         for i in range(resolution):
@@ -49,7 +49,7 @@ class TrapezoidChart(Chart):
 
     def render(self, f: Function, a, b, resolution):
         x = np.linspace(a - DOMAIN_OFFSET, b + DOMAIN_OFFSET, 1000)
-        super()._renderLine(f,x)
+        super()._renderLine(f,x, TRAP_METHOD)
         super()._exactIntegral(f, x, a, b, '#00ff0020')
         self.__trapezoidMethod(f, a, b, resolution)
         plt.show()

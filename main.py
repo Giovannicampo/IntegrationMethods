@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     rect = RectangleIntegration()
     trap = TrapezoidIntegration()
+    simp = SimpsonIntegration()
 
     rectChart = RectangleChart()
     trapChart = TrapezoidChart()
@@ -39,6 +40,8 @@ if __name__ == "__main__":
     calculateIntegral(rect, rectChart, arctanDerivativeFunc, 1.0, 3.0, RECT_RESOLUTION)
     separator()
     calculateIntegral(trap, trapChart, arctanDerivativeFunc, 1.0, 3.0, TRAP_RESOLUTION)
+    separator()
+    calculateIntegral(simp, trapChart, arctanDerivativeFunc, 1.0, 3.0, 3)
     newLine()
 
     # title(logDerivativeFunc.name)
