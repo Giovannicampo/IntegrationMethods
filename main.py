@@ -1,7 +1,5 @@
 from functions import *
-from integration import *
-from utils import newLine, separator, title
-from chart import Chart, RectangleChart, TrapezoidChart, SimpsonChart
+from utils import newLine, title
 from integrator import IntCreator
 
 RESOLUTION = 10
@@ -16,9 +14,16 @@ if __name__ == "__main__":
     trapInt = IntCreator.getTrap()
     simpInt = IntCreator.getSimp()
 
-    #functions
+    #cubic function
     cubicFunc = CubicFunction()
 
     rectInt.printAll(cubicFunc, 1.0, 10.0, RESOLUTION)
     trapInt.printAll(cubicFunc, 1.0, 10.0, RESOLUTION)
     simpInt.printAll(cubicFunc, 1.0, 10.0, RESOLUTION)
+
+    #arctan der function
+    arctanDerFunc = ArctanDerivativeFunction()
+
+    rectInt.printAll(arctanDerFunc, 1.0, 10.0, RESOLUTION)
+    trapInt.printAll(arctanDerFunc, 1.0, 10.0, RESOLUTION)
+    simpInt.printAll(arctanDerFunc, 1.0, 10.0, RESOLUTION)
