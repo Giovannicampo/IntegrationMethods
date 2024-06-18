@@ -9,7 +9,7 @@ class NumericIntegration(ABC):
         self.name = name
 
     @abstractmethod
-    def integrate():
+    def integrate() -> float:
         pass
 
 
