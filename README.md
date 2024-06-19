@@ -71,13 +71,58 @@ six             1.16.0
 
 Methods can be used as independent modules and thereby exported or can be tested through main.py or benchmark.py.
 
-- In main.py, there's a simulation showing the three methods used on different functions.
-
-> Note that each method behaves distinctly when used from a function to another one; so its curious how, depending on how it internally works, each method is suitable for certain kinds of functions (see below for further details).
 
 
+### Main.py
 
-- benchmark.py has not been implemented yet...
+In main.py, there's a simulation showing the three methods used on different functions.
+
+> Note that each method behaves distinctly when used from a function to another one; so its curious how, depending on how it internally works, each method could be more suitable for certain kinds of functions than others (see below for further details).
+
+Here's an example from the simulation showing the three methods used to calculate the definite integral of a cubic function from 1 to 10:
+$$
+\int_{1}^{10} x^3 \,dx
+$$
+
+- using the rectangle method:
+
+  ```tex
+  [Rectangle Method] definite integral from 10.0 to 1.0 of Cubic Function
+  results: 2969.3475, calculated by cycling 10 times
+  while exact result is 2499.75
+  ```
+
+![](docs/pics/cubicFuncRect.png)
+
+- using the trapezoid method:
+
+  ```tex
+  [Trapezoid Method] definite integral from 10.0 to 1.0 of Cubic Function
+  results: 2519.7974999999997, calculated by cycling 10 times
+  while exact result is 2499.75
+  ```
+
+![](docs/pics/cubiCfuncTrap.png)
+
+
+
+- using the Simpson method:
+
+  ```tex
+  [Simpson Method] definite integral from 10.0 to 1.0 of Cubic Function
+  results: 2499.75, calculated by cycling 10 times
+  while exact result is 2499.75
+  ```
+
+![](docs/pics/cubicFuncSimp.png)
+
+It is highly evident how starting from the rectangle method towards the Simpson's one, the accuracy increasingly enhances, due to their different behaviours and the functions they are used for. Particularly, the cubic function is a case of function in which Simpson's works perfectly and returns the exact result with very few iterations.
+
+We'll make a specific analysis on accuracy and complexity in benchmark.py.
+
+### Benchmark.py
+
+benchmark.py has not been implemented yet...
 
 
 
