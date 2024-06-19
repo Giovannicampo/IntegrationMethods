@@ -12,7 +12,7 @@ class Integrator(ABC):
 
     @abstractmethod
     def integrate(self, f: Function, a: float, b: float, resolution: int) -> float:
-        self.numericIntegrator.integrate(f, a, b, resolution)
+        return self.numericIntegrator.integrate(f, a, b, resolution)
 
     @abstractmethod
     def showChart(self, f: Function, a: float, b: float, resolution: int) -> None:
@@ -20,7 +20,7 @@ class Integrator(ABC):
 
     @abstractmethod
     def printAll(self, f: Function, a: float, b: float, resolution: int) -> None:
-        result = self.numericIntegrator.integrate(f, a, b, resolution)
+        result = self.integrate(f, a, b, resolution)
         print(f'[{self.numericIntegrator.name}] definite integral from {b} to {a} of {f.name}')
         print(f'results: {result}, calculated by cycling {resolution} times')
         print(f'while exact result is {f.integral(a,b)}')
