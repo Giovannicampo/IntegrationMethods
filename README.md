@@ -98,7 +98,7 @@ $$
   while exact result is 2499.75
   ```
 
-![](docs/pics/cubicFuncRect.png)
+<img src="docs/pics/cubicFuncRect.png" style="zoom:67%;" />
 
 - using the trapezoid method:
 
@@ -108,7 +108,7 @@ $$
   while exact result is 2499.75
   ```
 
-![](docs/pics/cubiCfuncTrap.png)
+<img src="docs/pics/cubiCfuncTrap.png" style="zoom:67%;" />
 
 
 
@@ -120,7 +120,7 @@ $$
   while exact result is 2499.75
   ```
 
-![](docs/pics/cubicFuncSimp.png)
+<img src="docs/pics/cubicFuncSimp.png" style="zoom:67%;" />
 
 It is highly evident how starting from the rectangle method towards the Simpson's one, the accuracy increasingly enhances, due to their different behaviours and the functions they are used for. Particularly, the cubic function is a case of function in which Simpson's works perfectly and returns the exact result with very few iterations.
 
@@ -145,7 +145,7 @@ $$
 \int_{a}^{b} x^3 \,dx
 $$
 
-![](docs/pics/CubicBenchmark.png)
+<img src="docs/pics/CubicBenchmark.png" style="zoom: 67%;" />
 
 ------
 
@@ -157,7 +157,7 @@ $$
 \int_{a}^{b} \dfrac{1}{x^2 + 1} \,dx
 $$
 
-![](docs/pics/ArctanDevBenchmark.png)
+<img src="docs/pics/ArctanDevBenchmark.png" style="zoom:67%;" />
 
 ------
 
@@ -169,7 +169,7 @@ $$
 \int_{a}^{b} \lvert x \rvert x^2 e^{3x^2}
 $$
 
-![](docs/pics/customBenchmark.png)
+<img src="docs/pics/customBenchmark.png" style="zoom:67%;" />
 
 It is pretty clear how the most performing method in these examples is Simpson's while the least one results being the rectangle method.
 
@@ -181,7 +181,7 @@ The software has been designed in order to be maintainable and keep each module 
 
 
 
-![](docs/pics/UMLClassDiagram.png)
+<img src="docs/pics/UMLClassDiagram.png" style="zoom: 50%;" />
 
 
 
