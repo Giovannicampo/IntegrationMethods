@@ -145,7 +145,7 @@ $$
 \int_{a}^{b} x^3 \,dx
 $$
 
-![](/home/giovanni/Scrivania/IntegrationMethods/docs/pics/CubicBenchmark.png)
+![](docs/pics/CubicBenchmark.png)
 
 ------
 
@@ -157,7 +157,7 @@ $$
 \int_{a}^{b} \dfrac{1}{x^2 + 1} \,dx
 $$
 
-![](/home/giovanni/Scrivania/IntegrationMethods/docs/pics/ArctanDevBenchmark.png)
+![](docs/pics/ArctanDevBenchmark.png)
 
 ------
 
@@ -169,7 +169,7 @@ $$
 \int_{a}^{b} \lvert x \rvert x^2 e^{3x^2}
 $$
 
-![](/home/giovanni/Scrivania/IntegrationMethods/docs/pics/customBenchmark.png)
+![](docs/pics/customBenchmark.png)
 
 It is pretty clear how the most performing method in these examples is Simpson's while the least one results being the rectangle method.
 
