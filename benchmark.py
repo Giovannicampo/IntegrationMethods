@@ -15,16 +15,15 @@ class Benchmark:
         return abs( int.integrate(f, a, b, res) - f.integral(a, b) )
 
 
-    def __calculateError(self, f: Function, a, b) -> tuple:
-        xAxis = np.arange(10, 100, 1)
+    def __calculateError(self, f: Function, a, b, start, end, res) -> tuple:
+        xAxis = np.arange(start, end, res)
         rectError = [self.__measureError(self.rectInt, f, a, b, r) for r in xAxis]
         trapError = [self.__measureError(self.trapInt, f, a, b, r) for r in xAxis]
         simpError = [self.__measureError(self.simpInt, f, a, b, r) for r in xAxis]
         return [xAxis, rectError, trapError, simpError]
     
-    def showAccuracy(self, f: Function, a, b):
-        xAxis, rectError, trapError, simpError = self.__calculateError(f, a, b)
-        print(rectError[0], trapError[0], simpError[0])
+    def showAccuracy(self, f: Function, a, b, start, end, res):
+        xAxis, rectError, trapError, simpError = self.__calculateError(f, a, b, start, end, res)
         plt.plot(xAxis, rectError, label='Rect Err')
         plt.plot(xAxis, trapError, label='Trap Err')
         plt.plot(xAxis, simpError, label='Simp Err')
@@ -36,7 +35,17 @@ class Benchmark:
         plt.show()
 
 
-ben = Benchmark()
+if __name__ == "__main__":
+    ben = Benchmark()
 
-ben.showAccuracy(ArctanDerivativeFunction(), 1.0, 10.0)
-ben.showAccuracy(CubicFunction(), 1.0, 10.0)
+    # range [10, 100]
+    ben.showAccuracy(ArctanDerivativeFunction(), 1.0, 10.0, 10, 100, 1)
+    ben.showAccuracy(CubicFunction(), 1.0, 10.0, 10, 100, 1)
+    ben.showAccuracy(CustomFunction(), 1.0, 10.0, 10, 100, 1)
+    ben.showAccuracy(LogDerivativeFunction(), 1.0, 10.0, 10, 100, 1)
+
+    #range [100, 1000]
+    ben.showAccuracy(ArctanDerivativeFunction(), 1.0, 10.0, 100, 1000, 1)
+    ben.showAccuracy(CubicFunction(), 1.0, 10.0, 100, 1000, 1)
+    ben.showAccuracy(CustomFunction(), 1.0, 10.0, 100, 1000, 1)
+    ben.showAccuracy(LogDerivativeFunction(), 1.0, 10.0, 100, 1000, 1)
