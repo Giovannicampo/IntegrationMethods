@@ -297,7 +297,8 @@ class IntCreator:
 
 ## What's next?
 
-There's a fourth method not implemented yet, that needs a deeper look and an accurate work, which is the Montecarlo's.  It would be interesting to implement because of the different nature of the algorithm itself, since it relies on a probabilistic behaviour rather than the classic deterministic ones.
+- Implementing Montecarlo's method;
+- Extending for double and triple integrals.
 
 
 
